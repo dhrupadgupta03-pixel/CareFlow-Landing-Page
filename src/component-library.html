@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Premium Clinic Component Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f756d",
+                        "background-light": "#fafaf9", // Updated to the requested Off-White
+                        "background-dark": "#112120",
+                        "stone-custom": "#e7e5e4", // Neutral derived from Stone-200
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#112120] antialiased">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-background-light/80 backdrop-blur-md border-b border-primary/10 px-4 py-4">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">medical_services</span>
+<h1 class="font-serif text-xl font-bold text-primary">LuxeHealth</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-primary/5">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto px-6 py-8 space-y-12 pb-32">
+<!-- Hero Section -->
+<section class="space-y-3">
+<h2 class="text-3xl font-serif font-bold leading-tight">Component Library</h2>
+<p class="text-primary/70 text-base leading-relaxed">Core design elements for a high-end private medical experience. Elegant, trustworthy, and non-sterile.</p>
+</section>
+<!-- Buttons Section -->
+<section class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/60">Action Buttons</h3>
+<div class="flex flex-col gap-4">
+<button class="bg-primary text-white rounded-full px-8 py-4 font-semibold text-lg shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
+                    Book Now
+                    <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+<button class="border-2 border-primary text-primary rounded-full px-8 py-4 font-semibold text-lg flex items-center justify-center gap-2 hover:bg-primary/5 transition-all">
+                    Learn More
+                </button>
+</div>
+</section>
+<!-- Form Elements -->
+<section class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/60">Input Fields</h3>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold text-primary/80 ml-4">FULL NAME</label>
+<input class="w-full bg-white border-stone-custom border-2 rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-stone-400" placeholder="Dr. Sarah Jenkins" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold text-primary/80 ml-4">APPOINTMENT DATE</label>
+<div class="relative">
+<input class="w-full bg-white border-stone-custom border-2 rounded-xl px-6 py-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none" type="text" value="October 24, 2024"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary/60">calendar_today</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Doctor Card Section -->
+<section class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/60">Doctor Profile Card</h3>
+<div class="bg-white rounded-2xl p-6 shadow-xl shadow-primary/5 border border-primary/5 flex flex-col items-center text-center space-y-4">
+<div class="relative">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary/10">
+<img alt="Doctor profile" class="w-full h-full object-cover" data-alt="Female doctor with stethoscope around neck" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs1fd88x_cVR7Jz01N3mM2s4ByMMgfsd2pTOYNf6FQfyXW9uDCoi1zL6e1MlggcF_AygmmUMwtrprRe7YxMhUqelgWtXNOt9z0G2oW44GWEH0XUrb2JSs9ZpudsCAKX6fCQTlASNBC5Mnc3knJKQqLjYggHVnwbIrL-oyGsXW_6ilBo1N_R_9DJ2BOcVdDFL8SwbYsf6QE1i4NBXuYIjJQZMCc4kaPbcSZrpBX3jKBkKdy4eg0NvPW4lbWvTeGPoqDlRG9TvVqBn4"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-green-500 w-5 h-5 rounded-full border-4 border-white"></div>
+</div>
+<div class="space-y-1">
+<h4 class="font-serif text-2xl font-bold text-primary">Dr. Sarah Jenkins</h4>
+<p class="text-primary/60 font-medium">Senior Cardiologist</p>
+</div>
+<div class="flex gap-2 py-2">
+<span class="px-3 py-1 bg-primary/5 text-primary text-xs font-bold rounded-full">4.9 ★</span>
+<span class="px-3 py-1 bg-primary/5 text-primary text-xs font-bold rounded-full">12y Exp.</span>
+</div>
+<button class="w-full py-3 bg-primary/10 text-primary font-bold rounded-full hover:bg-primary/20 transition-colors">
+                    View Profile
+                </button>
+</div>
+</section>
+<!-- Service Icons (Glassmorphism) -->
+<section class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/60">Specialized Services</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-effect rounded-2xl p-6 flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]">
+<div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">favorite</span>
+</div>
+<span class="text-sm font-bold text-primary">Cardiology</span>
+</div>
+<div class="glass-effect rounded-2xl p-6 flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]">
+<div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">stethoscope</span>
+</div>
+<span class="text-sm font-bold text-primary">Diagnostics</span>
+</div>
+<div class="glass-effect rounded-2xl p-6 flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]">
+<div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">psychiatry</span>
+</div>
+<span class="text-sm font-bold text-primary">Neurology</span>
+</div>
+<div class="glass-effect rounded-2xl p-6 flex flex-col items-center gap-3 transition-transform hover:scale-[1.02]">
+<div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">emergency</span>
+</div>
+<span class="text-sm font-bold text-primary">Emergency</span>
+</div>
+</div>
+</section>
+<!-- Color Palette -->
+<section class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/60">Color System</h3>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-primary border-4 border-white shadow-lg"></div>
+<span class="text-[10px] font-bold text-primary/60">Primary</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-stone-custom border-4 border-white shadow-lg"></div>
+<span class="text-[10px] font-bold text-primary/60">Stone</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-background-light border-4 border-white shadow-lg"></div>
+<span class="text-[10px] font-bold text-primary/60">Off-White</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-primary/5 pb-8 pt-4 px-8 safe-area-bottom">
+<div class="max-w-md mx-auto flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary/40" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Doctors</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary/40" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Bookings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary/40" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

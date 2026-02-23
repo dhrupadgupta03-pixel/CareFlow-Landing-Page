@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Desktop Appointment Selection Screen</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#52b7ae",
+                        "deep-teal": "#0f756d",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#151d1c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 font-display min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="w-full border-b border-slate-100 bg-white sticky top-0 z-50">
+<div class="max-w-[1280px] mx-auto px-8 h-20 flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary flex items-center justify-center rounded-xl text-white">
+<span class="material-symbols-outlined text-2xl">medical_services</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900">The Clinic <span class="text-primary">Journey</span></h1>
+</div>
+<!-- Progress Indicator -->
+<nav class="flex items-center gap-2">
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50">
+<span class="flex size-6 items-center justify-center rounded-full bg-slate-200 text-[10px] font-bold text-slate-500">1</span>
+<span class="text-sm font-medium text-slate-500">Service</span>
+</div>
+<div class="h-px w-6 bg-slate-200"></div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+<span class="flex size-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">2</span>
+<span class="text-sm font-semibold text-primary">Time</span>
+</div>
+<div class="h-px w-6 bg-slate-200"></div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50">
+<span class="flex size-6 items-center justify-center rounded-full bg-slate-200 text-[10px] font-bold text-slate-500">3</span>
+<span class="text-sm font-medium text-slate-500">Details</span>
+</div>
+</nav>
+<!-- Profile/Action Area -->
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="size-10 rounded-full bg-slate-100 border border-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3EdpveF1AJq3jXQLYKNApkREcg9fiFbql-pl5RCqU5LXrNSWg3RIhB7WYp4xTrZnld1z8WO8mvlVx3EKYMwsQ4Zg7h7WFquugtsxLQC_IvtLyuWr3SxxgPtxMfBe8tb40dJYr7Et7zi7b7WEA9fpO6bDOocCmcux2dXxM1PvouBv1lIj5Y3XFk5V9IYgXSkpAn3FZKCAwPLmDJUtEMqHkzdumouB2n_3UpTPy1fQgN6J3QsS-E0_ImWUVdkScj6rcuT_d7sXxiBA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Grid -->
+<main class="flex-1 max-w-[1280px] mx-auto w-full grid grid-cols-12 gap-12 p-12">
+<!-- Left Column: Selection Area (40%) -->
+<aside class="col-span-5 space-y-10">
+<!-- Service Selection -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900">Select Service</h3>
+<span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Step 1 of 2</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- General Consultation Card (Selected) -->
+<button class="flex items-center gap-4 p-5 rounded-xl border-2 border-primary bg-primary/5 text-left transition-all group">
+<div class="size-12 rounded-full bg-primary flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined">stethoscope</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 group-hover:text-primary transition-colors">General Consultation</p>
+<p class="text-sm text-slate-500 line-clamp-1">Regular checkup and health advice</p>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</button>
+<!-- Specialized Care Card -->
+<button class="flex items-center gap-4 p-5 rounded-xl border border-slate-200 bg-white text-left hover:border-primary/50 transition-all group">
+<div class="size-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 group-hover:bg-primary/10 group-hover:text-primary">
+<span class="material-symbols-outlined">biotech</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900">Specialized Care</p>
+<p class="text-sm text-slate-500 line-clamp-1">Advanced diagnostic and treatment</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Calendar Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900">Choose Date</h3>
+<div class="flex items-center gap-2">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<span class="text-sm font-semibold">October 2023</span>
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+<div class="grid grid-cols-7 text-center mb-4">
+<span class="text-[10px] font-bold text-slate-400 uppercase">Sun</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Mon</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Tue</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Wed</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Thu</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Fri</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Sat</span>
+</div>
+<div class="grid grid-cols-7 gap-y-2 text-center">
+<!-- Empty slots for alignment -->
+<div class="h-10"></div><div class="h-10"></div><div class="h-10"></div>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">1</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">2</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">3</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">4</button>
+<!-- Continued... -->
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">5</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10 text-slate-300 cursor-not-allowed">6</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">7</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">8</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">9</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">10</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">11</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">12</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">13</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">14</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">15</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">16</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">17</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">18</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">19</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">20</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">21</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">22</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">23</button>
+<!-- Selected Date -->
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-bold bg-primary text-white shadow-lg shadow-primary/30">24</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">25</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">26</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">27</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">28</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">29</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">30</button>
+<button class="h-10 w-10 mx-auto flex items-center justify-center rounded-full text-sm font-medium hover:bg-primary/10">31</button>
+</div>
+</div>
+</section>
+</aside>
+<!-- Right Column: Time Slots Area (60%) -->
+<section class="col-span-7 space-y-8">
+<header>
+<h2 class="text-2xl font-black text-slate-900 leading-tight">Monday, Oct 24</h2>
+<p class="text-slate-500 font-medium">Please select an available time slot for your consultation.</p>
+</header>
+<div class="space-y-10">
+<!-- Morning Section -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">light_mode</span>
+<h4 class="font-bold text-slate-800 uppercase tracking-wide text-xs">Morning (09:00 - 12:00)</h4>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">09:00 AM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">09:30 AM</button>
+<button class="py-3 px-4 rounded-full border border-slate-200 text-slate-300 font-medium text-sm cursor-not-allowed bg-slate-50 text-center">10:00 AM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">10:30 AM</button>
+<button class="py-3 px-4 rounded-full bg-deep-teal text-white font-bold text-sm shadow-md text-center ring-4 ring-deep-teal/10">11:00 AM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">11:30 AM</button>
+</div>
+</div>
+<!-- Afternoon Section -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">sunny</span>
+<h4 class="font-bold text-slate-800 uppercase tracking-wide text-xs">Afternoon (13:00 - 17:00)</h4>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">01:00 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">01:30 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">02:00 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">02:30 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">03:00 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">03:30 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">04:00 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">04:30 PM</button>
+</div>
+</div>
+<!-- Evening Section -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">bedtime</span>
+<h4 class="font-bold text-slate-800 uppercase tracking-wide text-xs">Evening (18:00 - 20:00)</h4>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">06:00 PM</button>
+<button class="py-3 px-4 rounded-full border border-slate-200 text-slate-300 font-medium text-sm cursor-not-allowed bg-slate-50 text-center">06:30 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">07:00 PM</button>
+<button class="py-3 px-4 rounded-full border border-deep-teal text-deep-teal font-semibold text-sm hover:bg-deep-teal hover:text-white transition-all text-center">07:30 PM</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<footer class="w-full bg-white border-t border-slate-100 py-6 sticky bottom-0 z-50">
+<div class="max-w-[1280px] mx-auto px-8 flex items-center justify-between">
+<button class="flex items-center gap-2 text-slate-500 font-semibold hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>Back</span>
+</button>
+<div class="flex items-center gap-8">
+<div class="hidden md:flex flex-col text-right">
+<span class="text-xs text-slate-400 font-bold uppercase tracking-widest">Selected Appointment</span>
+<span class="text-sm font-semibold text-slate-700">Oct 24, 2023 at 11:00 AM</span>
+</div>
+<button class="flex items-center gap-3 bg-deep-teal text-white px-10 py-4 rounded-full font-bold text-base hover:shadow-xl hover:shadow-deep-teal/20 active:scale-[0.98] transition-all">
+<span>Confirm Appointment</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>

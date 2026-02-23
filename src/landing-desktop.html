@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Chamber | Premium Medical Boutique</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#52b7ae",
+                        "primary-dark": "#0f756d",
+                        "background-light": "#ffffff",
+                        "background-dark": "#151d1c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined block text-2xl">medical_services</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Dr. Chamber</h1>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#services">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#testimonials">Testimonials</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex bg-primary-dark hover:bg-opacity-90 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all items-center gap-2">
+<span class="material-symbols-outlined text-sm">call</span>
+                    Call Now (+123456789)
+                </button>
+<div class="size-10 rounded-full border-2 border-primary/20 bg-cover bg-center" data-alt="Professional portrait of Dr. Chamber" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBKi7DRSoEPJe6chB1tyvgIoRY_n5T5zg1ZpyLWaQKEoYm31ysYo4hwvBo-4JbLmbvrOXrtlkeduKoR9_tHYYt23ZNgaJn8Q79qh197fduXyNFkbmlQAEBmtaKr8bCYhgWbvnl3GanFaTtUWH26w8HX9WsNsGoC6cLtWYLJWE2x7McK93pV0VQ13gfDJfmtaKT9dgxZtSGADImWhK-LjPKW488VRYspTgt_ZUG4Xss_rASh-B18qkrxyNI-2cK3ran6Cd-MgRuYK4')"></div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-16 pb-24 lg:pt-32 lg:pb-40 overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<span class="inline-block py-1 px-4 rounded-full bg-primary/10 text-primary-dark text-xs font-bold uppercase tracking-widest mb-6">
+                        Excellence in Private Medicine
+                    </span>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight mb-8">
+                        Your Health, <br/><span class="text-primary">My Priority</span>
+</h1>
+<p class="text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl">
+                        Boutique medical practice providing expert care tailored specifically to your lifestyle and needs. Experience medicine as it should be.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-full text-lg font-bold transition-all shadow-lg shadow-primary/20">
+                            Book Private Appointment
+                        </button>
+<button class="bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-10 py-4 rounded-full text-lg font-bold transition-all">
+                            View Services
+                        </button>
+</div>
+</div>
+</div>
+<!-- Abstract background element -->
+<div class="absolute -z-10 top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-5">
+<div class="absolute top-20 right-0 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-dark rounded-full blur-[120px]"></div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 bg-slate-50 dark:bg-slate-900/50" id="about">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+<img alt="Doctor consulting with patient" class="w-full h-full object-cover" data-alt="Modern high-end doctor office interior with professional equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDarE9BMzX_v03tL1ofCaH_poq6tMEXjbf27pIWTJpaJLhlbsjXg7JGnWFd_zGOBTGu16Ce2hVdijMED7TKVEC1WXKm_BY1g4n0AmM90mCV0uGbmzuXFchF9X5KqEyFgw9jlbfMFtorN7nGaqfczsDzmiibJSG_GB_18ZXf9mS_9yqqkgsx0uicAyLPGHGmoVGVifhfVdSVJD86Gn821lkI1mHIPlYbTattsVPmhP8Yq9OlHTImxzUmgsVFD8M_km3VYvZHyB1f4fE"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-white dark:bg-background-dark p-8 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 hidden md:block">
+<p class="text-4xl font-black text-primary mb-1">15+</p>
+<p class="text-sm font-bold text-slate-500 uppercase tracking-widest">Years of Expertise</p>
+</div>
+</div>
+<div class="flex flex-col gap-8">
+<div>
+<h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Expertise Meets Empathy</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                With over 15 years of experience, we provide a holistic approach to your wellbeing, combining medical excellence with a deeply personal touch. We believe that true health goes beyond the absence of illness.
+                            </p>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4 p-6 rounded-lg bg-white dark:bg-background-dark shadow-sm border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary text-3xl">stethoscope</span>
+<div>
+<h3 class="text-lg font-bold mb-1">Clinical Excellence</h3>
+<p class="text-slate-600 dark:text-slate-400">A decade and a half of clinical excellence in high-end private practice.</p>
+</div>
+</div>
+<div class="flex gap-4 p-6 rounded-lg bg-white dark:bg-background-dark shadow-sm border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary text-3xl">favorite</span>
+<div>
+<h3 class="text-lg font-bold mb-1">Holistic Approach</h3>
+<p class="text-slate-600 dark:text-slate-400">Treating the whole person, not just the symptoms, for long-term vitality.</p>
+</div>
+</div>
+<div class="flex gap-4 p-6 rounded-lg bg-white dark:bg-background-dark shadow-sm border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<div>
+<h3 class="text-lg font-bold mb-1">Personalized Care</h3>
+<p class="text-slate-600 dark:text-slate-400">Medical plans designed around your unique professional lifestyle and goals.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24" id="services">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Specialized Services</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Providing world-class medical attention with a focus on preventative care and advanced diagnostics.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="group bg-white dark:bg-background-dark p-2 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="aspect-video rounded-lg overflow-hidden mb-6">
+<img alt="Doctor examining patient" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a medical professional during a general consultation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT5PQJFx-45Q-lTl7pxevFy965FPZUvjn90yxsQm5pUtNRy9FHRM2pUrdJ-zUTKM3Ib1RACl5gTRcS1MpcfSfOFd1Vp0tFjUk86nWcvc3y5vHLI8n6nQvWrsyDTMsXi-i9mYT2vWVFRamxpAlnMcZVjZ1gbPDC30n3mc1XNg3gswBML4zlPjZtrzk8VAXcNbKTRvBudFrkYk03SAOKFI1HF8eH7wziOV2U7iuQbAoVW7D3oJHy92t3DyDeCOV4PBRYpWaeXfcygcI"/>
+</div>
+<div class="px-6 pb-6">
+<h3 class="text-xl font-bold mb-3">General Consultation</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                Comprehensive health screenings and preventative wellness checks tailored for the busy professional.
+                            </p>
+<a class="text-primary font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all" href="#">
+                                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group bg-white dark:bg-background-dark p-2 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="aspect-video rounded-lg overflow-hidden mb-6">
+<img alt="Medical laboratory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Advanced medical diagnostic equipment in a clean laboratory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKyAAXKz6QAlxjKaB3W9RJpY9wk0seQKd5qAxD-REXnTDTcvbrZdgGatCpYwupWUlUpXcMKtALB3TMsBFVB6Wn2OAOEdCtKcrzjxzQ3u6rhk1OnszwGNv6nWxglhqPJbPmXc-TfIjWWzFSnJdSnuYbLiYKzg2T25bWtuVgR77imm0ypXff5hf5nKomM4DUMPT_KhUQXsFXHfQqzxTszkrHsEL5LqrWfVSSD5hW2L1hsu4xizFSREE_ofV6dHUMj31C--0OGRpDgjQ"/>
+</div>
+<div class="px-6 pb-6">
+<h3 class="text-xl font-bold mb-3">Specialized Care</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                In-depth diagnostic focus using state-of-the-art medical technology for accurate and swift assessments.
+                            </p>
+<a class="text-primary font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all" href="#">
+                                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group bg-white dark:bg-background-dark p-2 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="aspect-video rounded-lg overflow-hidden mb-6">
+<img alt="Follow up meeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A doctor and patient having a focused conversation across a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl27dmb6DKaB8kgQ68A0Ycizol_Z1lHIAOcCS7hFUVfeSpyUPJMpTFhJnq5FMu4mowegywI0gnEzXlZgYMm-42l4oi72lVN-vruDb7RVkg9l4PHQ7qGjRbXpE6AcmKw0TirhXWol6quM-KWP6bLQdswXsM2cAadjEYLJmQGTm4_B3P3vzBo4BsgM_G-zqxVMVdoxRYSrerMbkZ6LYZw3jBF7d3QhmKW1GjkPCMd57KPs0wsDrn7_MRBmnluPxAUyzsAPgKl-Wia3g"/>
+</div>
+<div class="px-6 pb-6">
+<h3 class="text-xl font-bold mb-3">Follow-up Care</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                Consistent monitoring and long-term health management strategies to ensure your health stays on track.
+                            </p>
+<a class="text-primary font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all" href="#">
+                                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-primary/5" id="testimonials">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Patient Stories</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Trusted by leaders and innovators for discreet, high-end medical management.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Testimonial 1 -->
+<div class="bg-white dark:bg-background-dark p-10 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="text-primary mb-6">
+<span class="material-symbols-outlined text-4xl">format_quote</span>
+</div>
+<p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-8">
+                            "The level of attention and personalized care at Dr. Chamber's practice is unparalleled. They truly understand the demands of a high-pressure corporate lifestyle."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-full bg-cover bg-center" data-alt="Portrait of Sarah Mitchell" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdRFFxwfY7DjX07IY8OfO0Ocpgdxn2Uyx-qV7BAHjwMIB900F0HEDyYfauPLnPl611CwBlItZLWMRyFeFgSguxeWvJWipHjsXZjJMl7yBT_zFCiPEiSjO90noc7sT7pLuhQrwgrQXwMl9hbn75a816TcthsEbsNo3f4Gr9MQCYQa4C34FWo3y6qTBHa-D7iS2bhnPeFTdXtpUDf7c-rcCHRwbMykU9ixsjhkRe-WWtUwFB-CGiSEjIlhZXN79LruTgS0J_TQl9yJ4')"></div>
+<div>
+<h4 class="font-bold text-lg">Sarah Mitchell</h4>
+<p class="text-primary text-sm font-medium">Business Executive</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white dark:bg-background-dark p-10 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="text-primary mb-6">
+<span class="material-symbols-outlined text-4xl">format_quote</span>
+</div>
+<p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-8">
+                            "A seamless medical experience. No waiting times, cutting-edge diagnostics, and a doctor who actually listens. This is the future of boutique healthcare."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-full bg-cover bg-center" data-alt="Portrait of James Davidson" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBngEKFAJZzLTLmbC6zv0IhOXLMRt2ZWzJi_-V6NyXwuKFCVWl0d_wDNw-PCbVMNnebI600XKDrsYO8E4lgqlzje3dg6IxSwrcLxmTHsUA28VHBZNaLKbMa8ZLvOuqOwUnLAL1rwVPH-5VmqatO1BAYlATioDvo0kOGvtS7hybLhybRrG6P604f7kF2swWSQwxHqyzquPDgOUQTmOECKIK-IYp-FXVWIzE11DbUxurJG1uVNw3QqDOFLhgsApzQK6xWocMaHro1-Zg')"></div>
+<div>
+<h4 class="font-bold text-lg">James Davidson</h4>
+<p class="text-primary text-sm font-medium">Senior Architect</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="bg-primary-dark rounded-xl p-12 lg:p-20 text-center text-white relative overflow-hidden">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to prioritize your health?</h2>
+<p class="text-lg text-primary/20 text-white/80 mb-10">Experience the difference of a boutique medical practice. Secure your private consultation today.</p>
+<button class="bg-white text-primary-dark hover:bg-slate-100 px-12 py-5 rounded-full text-xl font-bold transition-all shadow-xl">
+                            Request Your Appointment
+                        </button>
+</div>
+<!-- Decorative background -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 pt-20 pb-10 border-t border-slate-100 dark:border-slate-800" id="contact">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-primary text-white p-1.5 rounded-lg scale-90">
+<span class="material-symbols-outlined block">medical_services</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Dr. Chamber</h2>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-6">
+                        Personalized boutique medical care in the heart of London. Dedicated to your lifelong wellness.
+                    </p>
+</div>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">Location</h3>
+<div class="flex gap-3 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<p>122 Harley St, Marylebone<br/>London W1G 7JH, UK</p>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">Contact &amp; Hours</h3>
+<div class="space-y-4">
+<div class="flex gap-3 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary">call</span>
+<p>+44 20 7946 0123</p>
+</div>
+<div class="flex gap-3 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p>Mon - Fri: 09:00 - 18:00</p>
+<p class="text-xs opacity-60">Weekends by request only</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Cookie Settings</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-sm text-slate-500">© 2024 Dr. Chamber Boutique Medical. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<svg class="size-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<svg class="size-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

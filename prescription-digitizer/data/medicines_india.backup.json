@@ -1,0 +1,480 @@
+{
+  "medicines": [
+    "Paracetamol 500mg",
+    "Paracetamol 650mg",
+    "Amoxicillin 250mg",
+    "Amoxicillin 500mg",
+    "Metformin 500mg",
+    "Metformin 1000mg",
+    "Atorvastatin 10mg",
+    "Atorvastatin 20mg",
+    "Amlodipine 5mg",
+    "Amlodipine 10mg",
+    "Ibuprofen 400mg",
+    "Azithromycin 250mg",
+    "Azithromycin 500mg",
+    "Pantoprazole 40mg",
+    "Pantoprazole 20mg",
+    "Cetirizine 10mg",
+    "Telmisartan 40mg",
+    "Telmisartan 80mg",
+    "Crocin 650mg",
+    "Dolo 650",
+    "Augmentin 625 Duo",
+    "Augmentin 1000 Duo",
+    "Limcee 500mg",
+    "Becosules Z",
+    "Shelcal 500",
+    "Thyronorm 25mcg",
+    "Thyronorm 50mcg",
+    "Thyronorm 100mcg",
+    "Glycomet 500mg",
+    "Glycomet 1000mg",
+    "Janumet 50/500",
+    "Galvus Met 50/500",
+    "Telma 40",
+    "Telma 80",
+    "Telma H",
+    "Rosuvas 10",
+    "Rosuvas 20",
+    "Ecosprin 75",
+    "Ecosprin 150",
+    "Clopitab 75",
+    "Pan 40",
+    "Pan D",
+    "Rablet 20",
+    "Rablet D",
+    "Omez 20",
+    "Omez D",
+    "Montair LC",
+    "Allegra 120",
+    "Allegra 180",
+    "Calpol 500",
+    "Calpol 650",
+    "Combiflam",
+    "Zerodol P",
+    "Zerodol SP",
+    "Ultracet",
+    "Volini Gel",
+    "Omnigel",
+    "Ascoril LS",
+    "Grilinctus BM",
+    "Benadryl",
+    "Corex DX",
+    "Taxim O 200",
+    "Cefixime 200mg",
+    "Ofloxacin 200mg",
+    "Metrogyl 400",
+    "Norflox TZ",
+    "Enterogermina",
+    "Econorm",
+    "Electral",
+    "ORS",
+    "Digene",
+    "Gelusil",
+    "Mucaine Gel",
+    "Cremaffin",
+    "Dulcoflex",
+    "Isabgol",
+    "Liv 52",
+    "Cystone",
+    "Neeri",
+    "Safi",
+    "Revital H",
+    "Zincovit",
+    "A to Z Gold",
+    "Supradyn",
+    "Neurobion Forte",
+    "Evion 400",
+    "Folvite 5mg",
+    "Orofer XT",
+    "Dexorange",
+    "Shelcal HD",
+    "Gemcal",
+    "Cipcal 500",
+    "Calcium 500mg",
+    "Vitamin D3 60k",
+    "Uprise D3 60k",
+    "Calcirol",
+    "Arachitol 6L",
+    "Shelcal XT",
+    "Ostocalcium",
+    "Neurobion Plus",
+    "Methycobal 500",
+    "Nurokind Plus",
+    "Nurokind LC",
+    "Rejunex CD3",
+    "Methylcobalamin 1500",
+    "Pregabalin 75",
+    "Gabapentin 300",
+    "Duloxetine 20",
+    "Amitriptyline 10",
+    "Nortriptyline 10",
+    "Diclofenac 50mg",
+    "Diclofenac 100mg",
+    "Omeprazole 20mg",
+    "Omeprazole 40mg",
+    "Ultrafen Plus 50mg",
+    "Relentus",
+    "Ultracal-D",
+    "Cartilix",
+    "Cartilox"
+  ],
+  "dosage_db": {
+    "Paracetamol": {
+      "valid_strengths": [
+        "500mg",
+        "650mg"
+      ],
+      "route": "Tab"
+    },
+    "Amoxicillin": {
+      "valid_strengths": [
+        "250mg",
+        "500mg"
+      ],
+      "route": "Cap"
+    },
+    "Metformin": {
+      "valid_strengths": [
+        "500mg",
+        "1000mg"
+      ],
+      "route": "Tab"
+    },
+    "Atorvastatin": {
+      "valid_strengths": [
+        "10mg",
+        "20mg",
+        "40mg"
+      ],
+      "route": "Tab"
+    },
+    "Amlodipine": {
+      "valid_strengths": [
+        "2.5mg",
+        "5mg",
+        "10mg"
+      ],
+      "route": "Tab"
+    },
+    "Ibuprofen": {
+      "valid_strengths": [
+        "200mg",
+        "400mg",
+        "600mg"
+      ],
+      "route": "Tab"
+    },
+    "Azithromycin": {
+      "valid_strengths": [
+        "250mg",
+        "500mg"
+      ],
+      "route": "Tab"
+    },
+    "Pantoprazole": {
+      "valid_strengths": [
+        "20mg",
+        "40mg"
+      ],
+      "route": "Tab"
+    },
+    "Cetirizine": {
+      "valid_strengths": [
+        "5mg",
+        "10mg"
+      ],
+      "route": "Tab"
+    },
+    "Telmisartan": {
+      "valid_strengths": [
+        "20mg",
+        "40mg",
+        "80mg"
+      ],
+      "route": "Tab"
+    },
+    "Diclofenac": {
+      "valid_strengths": [
+        "25mg",
+        "50mg",
+        "100mg"
+      ],
+      "route": "Tab"
+    },
+    "Omeprazole": {
+      "valid_strengths": [
+        "10mg",
+        "20mg",
+        "40mg"
+      ],
+      "route": "Cap"
+    },
+    "Ultrafen Plus": {
+      "valid_strengths": [
+        "50mg"
+      ],
+      "route": "Tab"
+    },
+    "Relentus": {
+      "valid_strengths": [],
+      "route": "Tab"
+    },
+    "Ultracal-D": {
+      "valid_strengths": [],
+      "route": "Tab"
+    },
+    "Cartilix": {
+      "valid_strengths": [],
+      "route": "Tab"
+    },
+    "Cartilox": {
+      "valid_strengths": [],
+      "route": "Tab"
+    },
+    "Cefixime": {
+      "valid_strengths": [
+        "100mg",
+        "200mg"
+      ],
+      "route": "Tab"
+    },
+    "Ofloxacin": {
+      "valid_strengths": [
+        "200mg",
+        "400mg"
+      ],
+      "route": "Tab"
+    },
+    "Metoprolol": {
+      "valid_strengths": [
+        "25mg",
+        "50mg",
+        "100mg"
+      ],
+      "route": "Tab"
+    },
+    "Bisoprolol": {
+      "valid_strengths": [
+        "2.5mg",
+        "5mg",
+        "10mg"
+      ],
+      "route": "Tab"
+    },
+    "Losartan": {
+      "valid_strengths": [
+        "25mg",
+        "50mg",
+        "100mg"
+      ],
+      "route": "Tab"
+    },
+    "Ramipril": {
+      "valid_strengths": [
+        "2.5mg",
+        "5mg",
+        "10mg"
+      ],
+      "route": "Cap"
+    },
+    "Warfarin": {
+      "valid_strengths": [
+        "1mg",
+        "2mg",
+        "5mg"
+      ],
+      "route": "Tab"
+    },
+    "Glimepiride": {
+      "valid_strengths": [
+        "1mg",
+        "2mg",
+        "4mg"
+      ],
+      "route": "Tab"
+    },
+    "Pregabalin": {
+      "valid_strengths": [
+        "50mg",
+        "75mg",
+        "150mg",
+        "300mg"
+      ],
+      "route": "Cap"
+    },
+    "Gabapentin": {
+      "valid_strengths": [
+        "100mg",
+        "300mg",
+        "400mg",
+        "600mg"
+      ],
+      "route": "Cap"
+    },
+    "Ciprofloxacin": {
+      "valid_strengths": [
+        "250mg",
+        "500mg",
+        "750mg"
+      ],
+      "route": "Tab"
+    },
+    "Levofloxacin": {
+      "valid_strengths": [
+        "250mg",
+        "500mg",
+        "750mg"
+      ],
+      "route": "Tab"
+    },
+    "Doxycycline": {
+      "valid_strengths": [
+        "100mg"
+      ],
+      "route": "Cap"
+    },
+    "Prednisolone": {
+      "valid_strengths": [
+        "5mg",
+        "10mg",
+        "20mg",
+        "40mg"
+      ],
+      "route": "Tab"
+    },
+    "Methylprednisolone": {
+      "valid_strengths": [
+        "4mg",
+        "8mg",
+        "16mg"
+      ],
+      "route": "Tab"
+    },
+    "Aceclofenac": {
+      "valid_strengths": [
+        "100mg"
+      ],
+      "route": "Tab"
+    },
+    "Naproxen": {
+      "valid_strengths": [
+        "250mg",
+        "500mg"
+      ],
+      "route": "Tab"
+    },
+    "Ranitidine": {
+      "valid_strengths": [
+        "150mg",
+        "300mg"
+      ],
+      "route": "Tab"
+    },
+    "Domperidone": {
+      "valid_strengths": [
+        "10mg"
+      ],
+      "route": "Tab"
+    },
+    "Ondansetron": {
+      "valid_strengths": [
+        "4mg",
+        "8mg"
+      ],
+      "route": "Tab"
+    },
+    "Rabeprazole": {
+      "valid_strengths": [
+        "10mg",
+        "20mg"
+      ],
+      "route": "Tab"
+    },
+    "Esomeprazole": {
+      "valid_strengths": [
+        "20mg",
+        "40mg"
+      ],
+      "route": "Cap"
+    },
+    "Sertraline": {
+      "valid_strengths": [
+        "25mg",
+        "50mg",
+        "100mg"
+      ],
+      "route": "Tab"
+    },
+    "Fluoxetine": {
+      "valid_strengths": [
+        "10mg",
+        "20mg",
+        "40mg",
+        "60mg"
+      ],
+      "route": "Cap"
+    },
+    "Escitalopram": {
+      "valid_strengths": [
+        "5mg",
+        "10mg",
+        "20mg"
+      ],
+      "route": "Tab"
+    },
+    "Alprazolam": {
+      "valid_strengths": [
+        "0.25mg",
+        "0.5mg",
+        "1mg"
+      ],
+      "route": "Tab"
+    },
+    "Clonazepam": {
+      "valid_strengths": [
+        "0.25mg",
+        "0.5mg",
+        "1mg",
+        "2mg"
+      ],
+      "route": "Tab"
+    },
+    "Montelukast": {
+      "valid_strengths": [
+        "4mg",
+        "5mg",
+        "10mg"
+      ],
+      "route": "Tab"
+    },
+    "Levocetrizine": {
+      "valid_strengths": [
+        "5mg"
+      ],
+      "route": "Tab"
+    },
+    "Fexofenadine": {
+      "valid_strengths": [
+        "120mg",
+        "180mg"
+      ],
+      "route": "Tab"
+    },
+    "Tramadol": {
+      "valid_strengths": [
+        "50mg",
+        "100mg"
+      ],
+      "route": "Tab"
+    },
+    "Progut": {
+      "valid_strengths": [
+        "200mg",
+        "300mg"
+      ],
+      "route": "Cap"
+    }
+  }
+}

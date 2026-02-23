@@ -1,0 +1,53 @@
+🚀 Starting Verification on Segment data/test_samples/sample_segment.png...
+Step 1: OCR...
+  - Raw OCR Output: 'Zahidul Hasan 15/7/10
+clo. Pain (R) Hee-Joints-
+Difficulty in gringe up by chair
+No bony Love
+
+Ad: Xray
+(A) Knee
+AP-
+Lat
+Axial
+Tunelw
+R7
+Tab. Ultra for. phy (2+0+0)
+② The. Reblutes: Gen/pp in
+③ Cap -Raintes
+④ Tab. Uliment-0-0+210
+
+⑤ tub. Cartilox -+
+11/17/10 Ad: knee Cap (A)
+Ad MRI - Physio + tono + Exercise
+(A) Knee (A) knee
+Tab: Diclofenne 2+0+7
+Tuls. Ultraes-D -0+3+0/hday
+Cap- Omeprozoly searid'
+Step 2: RAG Reconciliation...
+  - Final Output: 'Zahidul Hasan 15/7/10
+clo. Pain (R) Hee-Joints-
+Difficulty in gringe up by chair
+No bony Love
+
+Ad: Xray
+(A) Knee
+AP-
+Lat
+Axial
+Tunelw
+R7
+Tab. Ultra for. phy (2+0+0)
+② The. Reblutes: Gen/pp in
+③ Cap -Raintes
+④ Tab. Uliment-0-0+210
+
+⑤ tub. Cartilox -+
+11/17/10 Ad: knee Cap (A)
+Ad MRI - Physio + tono + Exercise
+(A) Knee (A) knee
+Tab: Diclofenne 2+0+7
+Tuls. Ultraes-D -0+3+0/hday
+Cap- Omeprozoly searid' (Confidence: 8.61244019138756%)
+
+✅ Verification Complete.

@@ -1,0 +1,8 @@
+streamlit
+google-generativeai
+opencv-python-headless
+pillow
+rapidfuzz
+python-dotenv
+psutil
+rich

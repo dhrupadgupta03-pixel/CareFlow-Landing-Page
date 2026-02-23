@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Receptionist Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0F766E",
+                        "background-light": "#FAFAF9",
+                        "accent-coral": "#f43f5e"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        serif: ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "2xl": "1.5rem"
+                    },
+                    boxShadow: {
+                        'hero': '0 20px 25px -5px rgba(15, 118, 110, 0.08), 0 8px 10px -6px rgba(15, 118, 110, 0.05)',
+                        'soft': '0 4px 12px -2px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.02)'
+                    }
+                }
+            }
+        };
+    </script>
+<style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ios-status-bar {
+            height: env(safe-area-inset-top);
+        }
+        body {
+            background-color: #FAFAF9;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-sans text-slate-900 min-h-screen pb-24">
+<div class="ios-status-bar bg-white"></div>
+<header class="bg-white px-6 pt-6 pb-4 border-b border-stone-100 sticky top-0 z-50 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">clinical_notes</span>
+</div>
+<h1 class="font-serif text-2xl font-bold tracking-tight text-primary">Clinic Hub</h1>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-stone-50 text-slate-400">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/10">
+<img alt="Receptionist profile picture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtTx-7S6pRt1dfHc3x33JSYtY7m4QKXE1WmlFeK8x7xNnYlTQ3q1Xtd_7L0PdOlB69UvuEXyRjLqfhkoNeij6cN9pgYlZWowW0orz-RNeyQ5IdJkxU6orVFC6GoOboMSdJOQxohd1Yd_0QeozZO1Fkvnbbf6fF7r5Ss8upsvflK7ClVg0Inp8JXdKHiym-e_1PLg5oUsEHvGQ9CbsRpBQpW-bfy3ygJwmCoHdR3VHF9XjRNwRX5WpQEaYG9BbtWOEEKuTpI_jg8E"/>
+</div>
+</div>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar">
+<div class="flex-none min-w-[120px] bg-white p-4 rounded-2xl border border-stone-100 shadow-soft">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Today</p>
+<p class="text-xl font-bold text-primary mt-1">24</p>
+</div>
+<div class="flex-none min-w-[120px] bg-white p-4 rounded-2xl border border-stone-100 shadow-soft">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Waiting</p>
+<p class="text-xl font-bold text-primary mt-1">8</p>
+</div>
+<div class="flex-none min-w-[120px] bg-white p-4 rounded-2xl border border-stone-100 shadow-soft">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Done</p>
+<p class="text-xl font-bold text-primary mt-1">12</p>
+</div>
+</div>
+</header>
+<main class="p-6 space-y-8">
+<section>
+<h2 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-4 px-1">Inside Chamber</h2>
+<div class="bg-white rounded-2xl p-6 shadow-hero border border-teal-50/50 relative">
+<button class="absolute top-5 right-4 p-1 text-stone-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="flex flex-col gap-1">
+<h3 class="font-serif text-2xl text-primary">Eleanor Shellstrop</h3>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-stone-400 text-lg">login</span>
+<span class="text-sm font-medium text-slate-500">09:15 AM</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-stone-400 text-lg">schedule</span>
+<span class="text-sm font-medium text-slate-500">18 mins</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="flex justify-between items-center mb-4 px-1">
+<h2 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">Up Next</h2>
+<span class="text-[10px] font-bold text-primary bg-primary/5 px-2 py-0.5 rounded-full uppercase">Priority</span>
+</div>
+<div class="bg-white rounded-2xl p-6 shadow-hero border border-teal-50/50 relative">
+<button class="absolute top-5 right-4 p-1 text-stone-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-serif text-xl text-slate-900">Chidi Anagonye</h3>
+<p class="text-sm font-medium text-primary mt-0.5">Scheduled for 09:45 AM</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-primary text-white py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 active:opacity-90 shadow-md">
+<span class="material-symbols-outlined text-lg">logout</span>
+                        Send In
+                    </button>
+<button class="w-12 h-12 flex items-center justify-center bg-stone-50 text-primary border border-stone-100 rounded-xl active:bg-stone-100">
+<span class="material-symbols-outlined text-xl">call</span>
+</button>
+</div>
+</div>
+</section>
+<section>
+<div class="flex justify-between items-center mb-4 px-1">
+<h2 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">Waiting Queue</h2>
+<button class="text-primary text-[11px] font-bold uppercase tracking-wider">View All</button>
+</div>
+<div class="space-y-3">
+<div class="bg-white p-4 rounded-2xl border border-stone-100/50 shadow-soft flex items-center justify-between group relative">
+<div class="flex flex-col">
+<span class="font-medium text-slate-900">Tahani Al-Jamil</span>
+<span class="text-xs text-slate-400">Arrived 10:05 AM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-bold text-slate-500 mr-8">10:15 AM</span>
+<button class="absolute right-4 p-1 text-stone-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-stone-100/50 shadow-soft flex items-center justify-between group relative">
+<div class="flex flex-col">
+<span class="font-medium text-slate-900">Jason Mendoza</span>
+<span class="text-xs text-slate-400">Arrived 10:20 AM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-bold text-slate-500 mr-8">11:00 AM</span>
+<button class="absolute right-4 p-1 text-stone-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-stone-100/50 shadow-soft flex items-center justify-between group relative">
+<div class="flex flex-col">
+<span class="font-medium text-slate-900">Janet Dell-Denunzio</span>
+<span class="text-xs text-slate-400">Arrived 10:45 AM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-bold text-slate-500 mr-8">11:30 AM</span>
+<button class="absolute right-4 p-1 text-stone-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<div class="fixed bottom-24 right-6 z-50">
+<button class="w-14 h-14 bg-accent-coral text-white rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md border-t border-stone-100 px-8 py-4 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">grid_view</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Board</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-stone-300" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Schedule</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-stone-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Patients</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-stone-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Admin</span>
+</a>
+</nav>
+
+</body></html>

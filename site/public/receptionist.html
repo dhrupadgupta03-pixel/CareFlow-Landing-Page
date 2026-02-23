@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinic Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f756d",
+                        "background-light": "#FAFAF9",
+                        "background-dark": "#112120",
+                        "off-white": "#FAFAF9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Bar -->
+<header class="sticky top-0 z-30 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 pt-8 pb-4 border-b border-primary/10">
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-serif text-2xl text-primary leading-none">The Clinic Journey</h1>
+<p class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-widest">Reception Command</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-slate-900 dark:text-slate-100">10:45 AM</p>
+<p class="text-xs text-slate-500 font-medium">Monday, Oct 24</p>
+</div>
+</div>
+</header>
+<main class="p-6 space-y-8 pb-32">
+<!-- Stats Row -->
+<section class="flex gap-4 overflow-x-auto no-scrollbar -mx-6 px-6">
+<div class="flex-none w-40 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">Total</p>
+<p class="text-3xl font-bold text-primary">24</p>
+<p class="text-[10px] text-slate-400 mt-1 font-medium">Patients Today</p>
+</div>
+<div class="flex-none w-40 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">Remaining</p>
+<p class="text-3xl font-bold text-primary">12</p>
+<p class="text-[10px] text-slate-400 mt-1 font-medium">To be seen</p>
+</div>
+<div class="flex-none w-40 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-1">Avg. Wait</p>
+<p class="text-3xl font-bold text-primary">15m</p>
+<p class="text-[10px] text-slate-400 mt-1 font-medium">Current pace</p>
+</div>
+</section>
+<!-- Inside Chamber (Current Patient) -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-400">Inside Chamber</h2>
+<span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-xl border border-primary/5 relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="relative z-10">
+<h3 class="font-serif text-3xl text-slate-900 dark:text-slate-100 mb-4 leading-tight">Sarah Jenkins</h3>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="space-y-1">
+<p class="text-[10px] uppercase font-bold text-slate-400">Entry Time</p>
+<div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-sm">login</span>
+<p class="text-sm font-semibold">10:30 AM</p>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] uppercase font-bold text-slate-400">Duration</p>
+<div class="flex items-center gap-1.5 text-primary font-bold">
+<span class="material-symbols-outlined text-sm">timer</span>
+<p class="text-sm">15:24</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-lg shadow-primary/20 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                        Done &amp; Checkout
+                    </button>
+</div>
+</div>
+</section>
+<!-- Up Next -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-400">Up Next</h2>
+<p class="text-xs font-bold text-primary">3 Patients</p>
+</div>
+<div class="space-y-4">
+<!-- Next Patient Card -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex-1">
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Michael Aris</h4>
+<div class="flex items-center gap-1 text-slate-500 mt-1">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<p class="text-xs font-medium">Scheduled for 10:45 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-lg">call</span>
+</button>
+<button class="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-primary/90 transition-all active:scale-95 shadow-md shadow-primary/10">
+                            Send In
+                        </button>
+</div>
+</div>
+<!-- Next Patient Card -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex-1">
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Eleanor Vance</h4>
+<div class="flex items-center gap-1 text-slate-500 mt-1">
+<span class="material-symbols-outlined text-xs">schedule</span>
+<p class="text-xs font-medium">Scheduled for 11:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-lg">call</span>
+</button>
+<button class="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-full">
+                            Send In
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Waiting Line (Queue) -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-400">Waiting Line</h2>
+<button class="text-xs font-bold text-primary flex items-center gap-1">
+                    View Full Queue <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+<div class="bg-white/50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700 divide-y divide-slate-100 dark:divide-slate-700 overflow-hidden">
+<div class="px-5 py-4 flex justify-between items-center">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300">David Miller</p>
+<p class="text-xs font-bold text-slate-400">11:15 AM</p>
+</div>
+<div class="px-5 py-4 flex justify-between items-center">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300">Alice Thompson</p>
+<p class="text-xs font-bold text-slate-400">11:30 AM</p>
+</div>
+<div class="px-5 py-4 flex justify-between items-center">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300">Robert Chen</p>
+<p class="text-xs font-bold text-slate-400">11:45 AM</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 px-6 pb-8 pt-4">
+<div class="flex justify-around items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Patients</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Schedule</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

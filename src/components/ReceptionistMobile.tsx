@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSandboxStore } from '../store/sandboxStore';
 import {
     receptionistMobileData,
     todaysStatsMobile,
@@ -22,6 +24,14 @@ interface ReceptionistMobileProps {
 }
 
 export const ReceptionistMobile: React.FC<ReceptionistMobileProps> = ({ className = '' }) => {
+    const navigate = useNavigate();
+    const { sandboxMode, bookingStatus, patientName, setBookingStatus } = useSandboxStore();
+
+    const handleApprove = () => {
+        setBookingStatus('approved');
+        navigate('/');
+    };
+
     return (
         <div className={`font-sans text-slate-900 min-h-screen pb-24 ${className}`} style={{ backgroundColor: theme.bgLight }}>
             <div className="ios-status-bar bg-white px-safe"></div>
@@ -58,6 +68,32 @@ export const ReceptionistMobile: React.FC<ReceptionistMobileProps> = ({ classNam
             </header>
 
             <main className="p-6 space-y-8">
+                {sandboxMode && bookingStatus === 'pending_approval' && (
+                    <section>
+                        <div className="flex justify-between items-center mb-4 px-1">
+                            <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">New Web Booking</h2>
+                            <Badge variant="outline" className="text-[10px] bg-amber-50 text-amber-600 border-amber-200">Action Required</Badge>
+                        </div>
+                        <Card className="rounded-2xl border-amber-200 bg-amber-50/50 shadow-sm relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-1 h-full bg-amber-500"></div>
+                            <CardContent className="p-6">
+                                <h3 className="font-serif text-xl text-slate-900 pr-8 tracking-tight">{patientName}</h3>
+                                <p className="text-sm font-medium mt-1 text-slate-600">Morning Slot • General Checkup</p>
+                                <div className="flex gap-3 mt-6">
+                                    <Button
+                                        onClick={handleApprove}
+                                        className="flex-1 text-white py-6 rounded-xl font-bold flex items-center justify-center gap-2 shadow-md hover:brightness-110 transition-all"
+                                        style={{ backgroundColor: theme.primary }}
+                                    >
+                                        <span className="material-symbols-outlined text-lg">check_circle</span>
+                                        Approve & Sync
+                                    </Button>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </section>
+                )}
+
                 <section>
                     <h2 className="metadata-text px-1 mb-4">Inside Chamber</h2>
                     <Card className="premium-card relative bg-white">

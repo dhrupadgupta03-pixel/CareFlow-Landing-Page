@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSandboxStore } from '../store/sandboxStore';
 import {
     appointmentMobileData,
     calendarDaysMobile,
@@ -21,6 +23,16 @@ interface AppointmentSelectionMobileProps {
 }
 
 export const AppointmentSelectionMobile: React.FC<AppointmentSelectionMobileProps> = ({ className = '' }) => {
+    const navigate = useNavigate();
+    const { sandboxMode, setBookingStatus } = useSandboxStore();
+
+    const handleBooking = () => {
+        if (sandboxMode) {
+            setBookingStatus('pending_approval');
+            navigate('/');
+        }
+    };
+
     return (
         <div className={`bg-background-light font-display text-[#111717] antialiased min-h-screen ${className}`} style={{ backgroundColor: theme.bgLight }}>
             {/* Header */}
@@ -177,6 +189,7 @@ export const AppointmentSelectionMobile: React.FC<AppointmentSelectionMobileProp
                         size="lg"
                         className="w-full text-white font-bold h-14 rounded-full shadow-lg hover:scale-[0.98] active:scale-95 transition-all flex items-center justify-center gap-2 hover:brightness-110"
                         style={{ backgroundColor: theme.accentCoral, boxShadow: '0 10px 15px -3px rgba(244, 63, 94, 0.3)' }}
+                        onClick={handleBooking}
                     >
                         <span>{appointmentFooterData.buttonText}</span>
                         <span className="material-symbols-outlined text-xl ml-1">arrow_forward</span>

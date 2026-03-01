@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSandboxStore } from '../store/sandboxStore';
 import { premiumDoctorData, activeSession, todaysSchedule, quickNote } from '../data/premiumDashboardMockData';
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -20,6 +21,8 @@ interface PremiumDoctorDashboardProps {
 }
 
 export const PremiumDoctorDashboard: React.FC<PremiumDoctorDashboardProps> = ({ className = '' }) => {
+    const { sandboxMode, bookingStatus, patientName } = useSandboxStore();
+
     return (
         <div className={`font-sans min-h-screen text-slate-900 ${className}`} style={{ backgroundColor: theme.bgLight }}>
             <div className="flex flex-col min-h-screen max-w-[1440px] mx-auto bg-white shadow-2xl relative overflow-hidden">
@@ -188,6 +191,26 @@ export const PremiumDoctorDashboard: React.FC<PremiumDoctorDashboardProps> = ({ 
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Synced Web Booking */}
+                            {sandboxMode && bookingStatus === 'approved' && (
+                                <div className="flex gap-6 pb-12 relative group z-10 items-center">
+                                    <div className="absolute w-[2px] h-full left-[14.5px] top-6 bottom-0" style={{ backgroundColor: theme.primaryLight }}></div>
+                                    <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white border-2 border-slate-300 shrink-0 shadow-sm ring-4 ring-emerald-50">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                                    </div>
+                                    <div className="flex-1 bg-gradient-to-r from-emerald-50 to-white border border-emerald-100 rounded-[32px] p-6 shadow-md overflow-hidden relative">
+                                        <div className="flex flex-col">
+                                            <span className="text-[11px] font-bold uppercase tracking-widest mb-1 text-emerald-600">New Web Booking • Next Up</span>
+                                            <span className="text-lg font-black text-slate-900 leading-tight">{patientName}</span>
+                                            <span className="text-[12px] font-medium mt-2 text-slate-600 flex items-center gap-1">
+                                                <span className="material-symbols-outlined text-[14px]">sync</span>
+                                                Synced from Receptionist
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
 
                             {/* Item 4: Upcoming */}
                             <div className="flex gap-6 pb-12 relative group z-10">

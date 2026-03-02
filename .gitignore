@@ -11,6 +11,28 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+
+# AI Agent metadata
+.gemini
+.antigravity
+brain
+.gsd
+.agent
+adapters
+AGENT_HANDOFF.md
+PROJECT_RULES.md
+GSD-STYLE.md
+model_capabilities.yaml
+UI_UX_DESIGN_DNA.md
+COMPETITIVE_BENCHMARK.md
+DESIGN_STRATEGY.md
+
+# Virtual environments
+.venv
+venv
+env
 
 # Editor directories and files
 .vscode/*

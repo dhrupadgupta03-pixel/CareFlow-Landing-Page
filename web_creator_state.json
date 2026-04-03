@@ -1,0 +1,34 @@
+{
+    "product_context": "A healthcare management ecosystem including a main web application (role-based dashboards) and a prescription digitizer prototype (Snap-to-Text engine). The target audience and primary buyers are doctors, especially those running single chambers and seeing patients one-by-one. A secondary target is larger firms looking to accurately digitize bulk paper-based historical patient records.",
+    "layout_goal": "A proper landing page which shows off the doctor's dashboard. Shows off the system UI as their product.",
+    "vibe_style": "Trustworthy, modern enterprise, clean and minimal, with warmth and caring at the side.",
+    "inspiration_chosen": "https://landings.dev/post/usepylon (Pylon Landing Page, but with much cleaner, non-distracting backgrounds so the Dashboard UI stands out clearly).",
+    "components_extracted": [
+        {
+            "section": "Navbar",
+            "chosen_component": "Floating Navbar (Aceternity)",
+            "notes": "Must use custom UI style and brand colors."
+        },
+        {
+            "section": "Hero Section",
+            "chosen_component": "Hero Highlight (Aceternity)",
+            "notes": "Highlight color must be based on the existing theme."
+        },
+        {
+            "section": "Features & UI Callouts",
+            "chosen_component": "Bento Grid (MagicUI) + Card Spotlight (Aceternity)",
+            "notes": "Combine layout of Bento Grid with hover reveal effects of Card Spotlight."
+        },
+        {
+            "section": "Testimonials / Social Proof",
+            "chosen_component": "Animated Testimonials (Aceternity)",
+            "notes": "Must use custom UI style and brand colors."
+        },
+        {
+            "section": "CTA / Buttons",
+            "chosen_component": "Shiny Button (MagicUI) / Hover Border Gradient",
+            "notes": "Match UI and color palette tightly to the rest of the application."
+        }
+    ],
+    "global_constraints": "The basic theme color palette must be ours. The text and font type must match the existing application to ensure continuity."
+}

@@ -12,6 +12,8 @@ import LandingMobile from './components/LandingMobile';
 import ComponentLibraryMobile from './components/ComponentLibraryMobile';
 import { MarketingSandbox } from './pages/MarketingSandbox';
 import { LandingPage } from './pages/LandingPage';
+import { LandingPageV2 } from './pages/LandingPageV2';
+import { LandingPageV3 } from './pages/LandingPageV3';
 
 const components = {
   DashboardDesktop,
@@ -82,7 +84,10 @@ function FlowWrapper({ children, title }) {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<MarketingSandbox />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/landing-v2" element={<LandingPageV2 />} />
+      <Route path="/landing-v3" element={<LandingPageV3 />} />
+      <Route path="/sandbox" element={<MarketingSandbox />} />
       <Route path="/screens" element={<ScreenViewer />} />
       <Route path="/patient" element={
         <FlowWrapper title="Patient Flow">

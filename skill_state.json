@@ -1,0 +1,15 @@
+{
+    "goal": "Create web pages.",
+    "instructions": "1. Ask the user for their requirements.\n2. Go to the following websites for inspiration for basic UI, UX, layout, and information architecture:\n   - https://www.untitledui.com/react/components\n   - ui.shadcn.com/blocks\n   - preline.co/examples.html\n   - ui.mantine.dev\n   - hyperui.dev\n   - chakra-templates.vercel.app\n   - https://landings.dev/\n   - https://collectui.com/\n   - https://websitevice.com/\n   **Edge Case Handled**: If unable to find exactly 3 good examples for the layout, UX copy, or info architecture, fall back to searching Google for more inspiration with the same context.\n3. Pick out 3 examples of the layout, 3 examples of UX copy, and 3 examples of information architecture.\n4. Present these examples to the user in a document, providing direct URLs so the user can go to the links to understand the UI component. Ask them to pick one example to set the design direction. The user will review the links, and if they dislike a component, they will suggest a different one or ask the agent to find another on the provided websites.\n5. Once the design direction is chosen and the basic understanding of UX copy, layout, and information architecture is picked up, use Google Chrome MCP to browse the following component libraries:\n   - https://animata.design/docs\n   - https://magicui.design/docs/components\n   - https://www.cult-ui.com/docs/components/popover-form\n   - https://coss.com/ui\n   - https://www.hover.dev/components\n   - https://reactbits.dev/get-started/index\n   - https://atroposjs.com/\n   - https://ui.aceternity.com/components\n6. Curate different UI components from these libraries and create a new Document named 'Design'. This document will serve as a design system for web pages moving forward.\n7. The 'Design' document must follow this blueprint structure strictly:\n   - 1. Project Context & Agent Interpretation (Project Goal, Theme, Interactivity, Typography)\n   - 2. Component Sourcing & Mapping (Review Required) (Role, Proposed Component, Preview Link, Agent Rationale) *Duplicate for every major section/interactive component*\n   - 3. Technical Prerequisites (Base Framework, Styling Solution, Required Libraries, Configuration Needs)\n   - 4. Human Review Station (Current Status, Instructions for User)",
+    "constraints": "You MUST use Google Chrome MCP to browse the websites. The Design document must strictly follow the provided blueprint.",
+    "assumptions": [
+        "The agent has access to the Chrome MCP server to browse external URLs.",
+        "The agent has access to a file system to create the output Document.",
+        "The websites provided will be accessible without authentication or CAPTCHA blocks during the agent's run.",
+        "The user will be available to review the examples and select one before the agent proceeds to curate the final components."
+    ],
+    "prerequisites": [
+        "Chrome MCP Server running and available to the agent."
+    ],
+    "discussion_approved": true
+}

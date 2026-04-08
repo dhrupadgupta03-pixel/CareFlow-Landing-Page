@@ -1,0 +1,9 @@
+Add your doctor avatar image here as:
+  public/doctor-avatar.png
+
+Requirements:
+  - Square image (1:1 ratio)
+  - Minimum 80x80px (displayed at 40x40px)
+  - PNG or JPG
+
+If missing, the app shows a teal circle with "Dr" as fallback.

@@ -1,0 +1,41 @@
+# All general crawlers
+User-agent: *
+Allow: /
+Allow: /api/openapi
+Disallow: /api/
+
+# OpenAI
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google / Gemini
+User-agent: Googlebot
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+Allow: /
+
+# Microsoft / Copilot
+User-agent: Bingbot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Meta
+User-agent: FacebookBot
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Common Crawl (used by many AI training datasets)
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://prescription-mvp.vercel.app/sitemap.xml

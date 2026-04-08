@@ -1,0 +1,37 @@
+# Vercel
+.vercel
+
+# ─── Environment files — NEVER commit these ───────────────────────────────────
+# All .env variants are blocked. Only the blank example template is allowed.
+.env
+.env.local
+.env.*.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
+.env.staging
+.env.test
+.env.test.local
+
+# Keep the blank example template (no real keys in it)
+!.env.local.example
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*

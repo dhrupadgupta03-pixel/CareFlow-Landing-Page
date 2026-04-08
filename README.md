@@ -1,16 +1,36 @@
-# React + Vite
+# Doctor Patient Receptionist - WhatsApp Experiment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Doctor Patient Receptionist** ecosystem. This branch (`WhatssapExperiment`) focuses on integrating WhatsApp-based prescription delivery and AI-powered digitization into a comprehensive healthcare management platform.
 
-Currently, two official plugins are available:
+## 🤖 AI Reader's Guide
+If you are an AI reading this repository, here is the structure you should know:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. **Core Branch: WhatssapExperiment**
+This branch implements a WhatsApp MVP to test image previews when sharing prescription links.
+- **Implementation Plan**: `Whatssap integration/implementation_plan.md`
+- **Goal**: Reliable `og:image` preview in WhatsApp via Cloudinary and Next.js.
 
-## React Compiler
+### 2. **Main Web Application (`/src`)**
+- **Tech Stack**: React 19, Vite, TailwindCSS, Framer Motion, Zustand, Radix UI.
+- **Dashboards**: Doctor, Patient, and Receptionist role-based interfaces.
+- **Entry Points**: `src/main.jsx`, `src/App.tsx`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. **Prescription Digitizer (`/prescription-digitizer`)**
+- **Tech Stack**: Python 3, Streamlit, Google Gemini 1.5 Flash API, OpenCV.
+- **Purpose**: "Snap-to-Text" engine for handwritten prescriptions with RAG-based medicine matching.
+- **Key Files**: `app.py`, `ingest_medicines.py`, `test_accuracy.py`.
 
-## Expanding the ESLint configuration
+### 4. **Key Documentation**
+- `PRODUCTS_DOCUMENTATION.md`: Overview of all products and prototypes.
+- `docs/runbook.md`: Canonical operational procedures for the team.
+- `Whatssap integration/implementation_plan.md`: Roadmap for WhatsApp integration.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **Frontend**: React 19, Vite, TailwindCSS, Radix UI.
+- **AI/ML**: Python 3, Gemini 1.5 Flash, OpenCV.
+- **State Management**: Zustand.
+- **Infrastructure**: Vercel (MVP), Cloudinary (Image Hosting).
+
+## 🚀 Getting Started
+- **Frontend**: `npm install && npm run dev`
+- **AI Digitizer**: `pip install -r prescription-digitizer/requirements.txt && streamlit run prescription-digitizer/app.py`

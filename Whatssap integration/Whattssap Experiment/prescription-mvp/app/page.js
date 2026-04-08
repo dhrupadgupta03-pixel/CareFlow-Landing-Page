@@ -1,43 +1,117 @@
-"use client";
-import { useState } from 'react';
+/**
+ * Doctor UI — state machine orchestrator.
+ *
+ * This file owns:
+ *   - Global state (step, patient data, captured file)
+ *   - sessionStorage persistence for Step 1 fields
+ *   - Screen routing: renders PatientInfo → Camera → PreviewSend
+ *
+ * No UI logic lives here. Each screen component is self-contained.
+ */
 
-export default function Home() {
-  const [phone, setPhone] = useState('');
-  // Use current URL for testing (once deployed)
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://prescription-mvp.vercel.app';
+'use client';
+import { useState, useEffect } from 'react';
+import Header      from '../components/Header.jsx';
+import PatientInfo from '../screens/PatientInfo/index.jsx';
+import Camera      from '../screens/Camera/index.jsx';
+import PreviewSend from '../screens/PreviewSend/index.jsx';
 
-  const handleSend = () => {
-    // Generate the link for the preview page
-    const prescriptionUrl = `${baseUrl}/prescription/test1`;
-    // Create the WhatsApp sharing link
-    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(prescriptionUrl)}`;
-    
-    // Open in new tab
-    window.open(whatsappUrl, '_blank');
-  };
+const SESSION_KEY_NAME  = 'px_name';
+const SESSION_KEY_PHONE = 'px_phone';
+
+export default function DoctorPortal() {
+  const [step,           setStep]           = useState(1);
+  const [patientName,    setPatientName]     = useState('');
+  const [patientPhone,   setPatientPhone]    = useState('');   // raw input
+  const [sanitizedPhone, setSanitizedPhone]  = useState('');   // E.164
+  const [capturedFile,   setCapturedFile]    = useState(null);
+  const [previewUrl,     setPreviewUrl]      = useState(null);
+  const [sessionRestored, setSessionRestored] = useState(false);
+
+  // Restore from sessionStorage on mount (Screen 1E)
+  useEffect(() => {
+    try {
+      const savedName  = sessionStorage.getItem(SESSION_KEY_NAME);
+      const savedPhone = sessionStorage.getItem(SESSION_KEY_PHONE);
+      if (savedName || savedPhone) {
+        if (savedName)  setPatientName(savedName);
+        if (savedPhone) setPatientPhone(savedPhone);
+        setSessionRestored(true);
+      }
+    } catch (_) {}
+  }, []);
+
+  // Persist to sessionStorage on every keystroke
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(SESSION_KEY_NAME,  patientName);
+      sessionStorage.setItem(SESSION_KEY_PHONE, patientPhone);
+    } catch (_) {}
+  }, [patientName, patientPhone]);
+
+  function handleContinue(sanitized) {
+    setSanitizedPhone(sanitized);
+    setStep(2);
+  }
+
+  function handleCapture(file) {
+    setCapturedFile(file);
+    setPreviewUrl(URL.createObjectURL(file));
+    setStep(3);
+  }
+
+  function handleRetake() {
+    setCapturedFile(null);
+    setPreviewUrl(null);
+    setStep(2);
+  }
+
+  function handleBackToStep1() {
+    setStep(1);
+  }
 
   return (
-    <div style={{ padding: "50px", fontFamily: "sans-serif", maxWidth: "400px", margin: "0 auto" }}>
-      <h2>WhatsApp Prescription Sender</h2>
-      <div style={{ marginBottom: "20px" }}>
-        <label style={{ display: "block", marginBottom: "8px" }}>Patient Phone Number (with country code):</label>
-        <input 
-          type="text" 
-          placeholder="e.g. 919876543210" 
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          style={{ width: "100%", padding: "12px", borderRadius: "5px", border: "1px solid #ccc" }}
-        />
+    <div style={{
+      maxWidth:      '430px',
+      margin:        '0 auto',
+      minHeight:     '100vh',
+      background:    '#F4F6F8',
+      paddingBottom: 'env(safe-area-inset-bottom, 32px)',
+    }}>
+      <Header />
+
+      <div style={{ padding: '16px' }}>
+        {step === 1 && (
+          <PatientInfo
+            patientName={patientName}
+            patientPhone={patientPhone}
+            onNameChange={(v) => setPatientName(v)}
+            onPhoneChange={(v) => setPatientPhone(v)}
+            onContinue={handleContinue}
+            sessionRestored={sessionRestored}
+            onDismissRestore={() => setSessionRestored(false)}
+          />
+        )}
+
+        {step === 2 && (
+          <Camera
+            patientName={patientName}
+            onCapture={handleCapture}
+            onBack={handleBackToStep1}
+          />
+        )}
+
+        {step === 3 && capturedFile && (
+          <PreviewSend
+            patientName={patientName}
+            sanitizedPhone={sanitizedPhone}
+            previewUrl={previewUrl}
+            capturedFile={capturedFile}
+            onRetake={handleRetake}
+            appUrl={typeof window !== 'undefined' ? window.location.origin : ''}
+          />
+        )}
       </div>
-      <button 
-        onClick={handleSend}
-        style={{ width: "100%", padding: "12px", background: "#25D366", color: "white", border: "none", borderRadius: "5px", fontSize: "16px", cursor: "pointer", fontWeight: "bold" }}
-      >
-        Send on WhatsApp
-      </button>
-      <p style={{ marginTop: "20px", fontSize: "14px", color: "#666" }}>
-        Make sure to include the country code without any special characters (e.g., 91 for India).
-      </p>
     </div>
   );
 }

@@ -1,0 +1,45 @@
+# Prescription MVP
+
+> A web app that lets doctors photograph prescriptions and send them to patients via WhatsApp.
+
+## What this app does
+
+This is a prescription delivery system for doctors. The doctor:
+1. Enters the patient's name and phone number
+2. Captures a photo of the handwritten prescription
+3. Taps "Send to WhatsApp" — the app uploads the image, creates a shareable link, and opens WhatsApp with a pre-filled message
+
+The patient receives a WhatsApp message with a link to view and download their prescription.
+
+## Routes
+
+- `/` — Doctor's portal (upload interface)
+- `/prescription/[id]` — Patient-facing prescription view (SSR with OG meta tags)
+- `/sitemap.xml` — Dynamic sitemap
+- `/robots.txt` — Crawler rules
+
+## API Endpoints
+
+- `POST /api/upload` — Upload a prescription image (multipart form: image, patientName, patientPhone). Returns `{ prescriptionId, imageUrl }`.
+- `GET /api/download/[id]` — Download proxy for a prescription image. Returns the image as an attachment.
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- Supabase (PostgreSQL database)
+- Cloudinary (image hosting with OG image generation)
+- WhatsApp Web deep links for message delivery
+
+## Data Model
+
+Each prescription has:
+- `id` — Short unique ID (nanoid, 7 chars)
+- `patient_name` — Patient's full name
+- `patient_phone` — Sanitized Indian mobile number (E.164 digits)
+- `image_url` — Full-resolution Cloudinary URL
+- `og_image_url` — 1200x630 letterboxed version for WhatsApp link previews
+- `created_at` — Timestamp
+
+## Contact
+
+Built by Dr. Reynaldo O. Joson's clinic — Manila Doctors Hospital.

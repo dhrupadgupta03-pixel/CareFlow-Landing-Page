@@ -1,0 +1,95 @@
+/* MD3 Design Tokens — change values here to retheme the entire app */
+:root {
+  --md-primary:           #00897B;
+  --md-on-primary:        #FFFFFF;
+  --md-primary-container: #E0F2F1;
+  --md-on-primary-cont:   #004D40;
+
+  --md-surface:           #FAFAFA;
+  --md-surface-variant:   #F4F6F8;
+  --md-on-surface:        #1C1B1F;
+  --md-on-surface-var:    #49454F;
+
+  --md-error:             #B3261E;
+  --md-error-container:   #F9DEDC;
+  --md-on-error-cont:     #410E0B;
+
+  --md-warning:           #E65100;
+  --md-warning-container: #FFF3E0;
+  --md-on-warning-cont:   #BF360C;
+
+  --md-info:              #0277BD;
+  --md-info-container:    #E1F5FE;
+  --md-on-info-cont:      #01579B;
+
+  --md-outline:           #CAC4D0;
+  --md-outline-variant:   #E7E0EC;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  margin:      0;
+  padding:     0;
+  font-family: var(--font-roboto, 'Roboto'), system-ui, -apple-system, sans-serif;
+  font-size:   16px;
+  color:       var(--md-on-surface);
+  background:  var(--md-surface-variant);
+}
+
+/* Spinner animation used in Button component */
+@keyframes md3-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Teal spinner (used inside image overlay on Screen 3A) */
+.md3-spinner-teal {
+  width:        32px;
+  height:       32px;
+  border-radius:50%;
+  border:       3px solid var(--md-primary-container);
+  border-top:   3px solid var(--md-primary);
+  display:      inline-block;
+  animation:    md3-spin 0.7s linear infinite;
+}
+
+/* Indeterminate progress bar animation (Screen 3A) */
+@keyframes md3-progress-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+.md3-progress-indeterminate {
+  width:     30%;
+  animation: md3-progress-slide 1.4s ease-in-out infinite;
+}
+
+/* Skeleton shimmer animation (Screen 4B) */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton-shimmer {
+  background:      linear-gradient(90deg, #F4F6F8 25%, rgba(255,255,255,0.5) 50%, #F4F6F8 75%);
+  background-size: 800px 100%;
+  animation:       skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+/* Limit desktop viewport — app is mobile-first */
+@media (min-width: 430px) {
+  body {
+    background: var(--md-surface-variant);
+  }
+}
+
+/* iPhone safe area support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

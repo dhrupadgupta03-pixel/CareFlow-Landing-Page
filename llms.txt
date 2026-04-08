@@ -1,0 +1,27 @@
+# Doctor Patient Receptionist - WhatsApp Experiment Branch
+
+This repository contains a healthcare management ecosystem with a focus on WhatsApp-based prescription delivery and AI-powered prescription digitization.
+
+## Branch Focus: WhatssapExperiment
+This branch implements a WhatsApp integration prototype to test reliable image previews when sharing prescription links.
+
+### Key Components
+- **Main Web App (`/src`)**: React 19 + Vite + TailwindCSS. Role-based dashboards for Doctors, Patients, and Receptionists.
+- **WhatsApp Integration (`/Whatssap integration`)**: MVP plans and implementation for sending prescriptions via WhatsApp.
+- **Prescription Digitizer (`/prescription-digitizer`)**: Python-based AI tool using Gemini 1.5 Flash to digitize handwritten prescriptions with RAG-based medicine matching.
+- **Documentation (`/docs`, `GEMINI.md`, `PRODUCTS_DOCUMENTATION.md`)**: Comprehensive guides and project overview.
+
+### Tech Stack
+- **Frontend**: React 19, Vite, TailwindCSS, Framer Motion, Zustand, Radix UI.
+- **AI/Backend**: Python 3, Streamlit, Google Gemini API, OpenCV.
+- **Integration**: WhatsApp (wa.me), Cloudinary (Image Hosting), Next.js (MVP).
+
+### Directory Structure
+- `/src`: Frontend source code.
+- `/prescription-digitizer`: AI digitization engine.
+- `/Whatssap integration`: WhatsApp MVP and implementation details.
+- `/docs`: Project runbooks and optimization guides.
+
+## Getting Started
+- Frontend: `npm install && npm run dev`
+- Digitizer: `pip install -r prescription-digitizer/requirements.txt && streamlit run prescription-digitizer/app.py`

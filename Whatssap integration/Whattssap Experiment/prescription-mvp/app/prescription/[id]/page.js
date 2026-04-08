@@ -1,34 +1,67 @@
-export default function PrescriptionPage({ params }) {
-  const imageUrl = "https://res.cloudinary.com/dharxchac/image/upload/v1774522651/WhatsApp_Image_2026-03-24_at_9.05.53_PM_spqksr.jpg";
+/**
+ * Patient prescription page — Server Component.
+ *
+ * generateMetadata() runs server-side so WhatsApp's crawler
+ * (which does NOT run JavaScript) can read the OG tags.
+ *
+ * Route: /prescription/[id]
+ */
 
-  return (
-    <>
-      <head>
-        <title>Prescription</title>
-        <meta property="og:title" content="Prescription" />
-        <meta property="og:description" content="From your doctor" />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </head>
-      <div style={{ padding: "20px", textAlign: "center", fontFamily: "sans-serif" }}>
-        <h1>Your Prescription</h1>
-        <p>From your doctor</p>
-        <img 
-          src={imageUrl} 
-          alt="Prescription" 
-          style={{ maxWidth: "100%", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }} 
-        />
-        <br />
-        <a 
-          href={imageUrl} 
-          download 
-          target="_blank"
-          style={{ display: "inline-block", marginTop: "20px", padding: "10px 20px", background: "#0070f3", color: "white", borderRadius: "5px", textDecoration: "none", fontWeight: "bold" }}
-        >
-          Download / Save Image
-        </a>
-      </div>
-    </>
-  );
+import { notFound }             from 'next/navigation';
+import { getPrescriptionById }  from '../../../backend/services/prescriptionService.js';
+import { DOCTOR }               from '../../../backend/constants/doctor.js';
+import PrescriptionView         from '../../../patient/PrescriptionView.jsx';
+import NotFoundView             from '../../../patient/NotFoundView.jsx';
+
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || '';
+
+export async function generateMetadata({ params }) {
+  const prescription = await getPrescriptionById(params.id);
+
+  if (!prescription) {
+    return {
+      title: 'Prescription not found',
+      description: 'This link may have expired.',
+    };
+  }
+
+  return {
+    title:       `Prescription for ${prescription.patientName} · ${DOCTOR.name}`,
+    description: `From ${DOCTOR.clinic} · Tap to view and download`,
+    openGraph: {
+      title:       `Prescription for ${prescription.patientName} · ${DOCTOR.name}`,
+      description: `From ${DOCTOR.clinic} · Tap to view and download`,
+      images: [{
+        url:    prescription.ogImageUrl,
+        width:  1200,
+        height: 630,
+      }],
+      url:  `${APP_URL}/prescription/${params.id}`,
+      type: 'website',
+    },
+    // Twitter / X card (also used by WhatsApp as fallback)
+    twitter: {
+      card:        'summary_large_image',
+      title:       `Prescription for ${prescription.patientName}`,
+      description: `From ${DOCTOR.clinic}`,
+      images:      [prescription.ogImageUrl],
+    },
+  };
+}
+
+export default async function PrescriptionPage({ params }) {
+  let prescription;
+
+  try {
+    prescription = await getPrescriptionById(params.id);
+  } catch {
+    // Supabase down or network error — show graceful error, not a 500
+    return <NotFoundView />;
+  }
+
+  if (!prescription) {
+    notFound();
+  }
+
+  return <PrescriptionView prescription={prescription} />;
 }
